@@ -1,3 +1,5 @@
+import {createTaskBlock} from './task/createTask.js';
+
 function todoHeaderSetup() {
 
     const todoHeader = document.createElement("header");
@@ -20,6 +22,8 @@ function todoMainSetup() {
 
     const todoMain = document.createElement("section");
     todoMain.id = "todo-main";
+
+    todoMain.appendChild(createTaskBlock());
 
     return todoMain;
 

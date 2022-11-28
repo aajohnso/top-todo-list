@@ -1,1 +1,1 @@
-console.log("connected");
+(()=>{"use strict";document.body.appendChild(function(){const e=document.createElement("header");return e.id="todo-header",e}()),document.body.appendChild(function(){const e=document.createElement("section");return e.id="todo-sidebar",e}()),document.body.appendChild(function(){const e=document.createElement("section");return e.id="todo-main",e}())})();

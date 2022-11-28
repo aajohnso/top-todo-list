@@ -51,8 +51,19 @@ function createTaskForm() {
     createTaskForm.appendChild(createTaskFormPriorityField);
     createTaskForm.appendChild(createTaskFormSubmit);
 
+    createTaskForm.addEventListener('submit', createNewTask);
+    
     return createTaskForm;
 
+}
+
+function createNewTask(e) {
+    e.preventDefault();
+    console.log("submit");
+
+    const createTaskFormData = new FormData(this);
+
+    console.log(createTaskFormData.get('task-title'));
 }
 
 export {createTaskButton, createTaskForm};

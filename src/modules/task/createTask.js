@@ -1,4 +1,4 @@
-import Task from "./taskObject";
+import {Task} from "./taskObject";
 
 function createTaskButton() {
     
@@ -63,7 +63,14 @@ function createNewTask(e) {
 
     const createTaskFormData = new FormData(this);
 
-    console.log(createTaskFormData.get('task-title'));
+    let newTaskTitle = createTaskFormData.get('task-title');
+    let newTaskDescription = createTaskFormData.get('task-description');
+    let newTaskDueDate = createTaskFormData.get('task-due-date');
+    let newTaskPriority = createTaskFormData.get('task-priority');
+
+    let newTask = new Task(newTaskTitle, newTaskDescription, newTaskDueDate, newTaskPriority);
+
+    console.log(newTask);
 }
 
 export {createTaskButton, createTaskForm};

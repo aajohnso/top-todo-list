@@ -10,10 +10,10 @@ function createTaskButton() {
 
 }
 
-function createTaskForm() {
+function createTaskForm(projectName) {
 
     const createTaskForm = document.createElement("form");
-    createTaskForm.id = "todo-create-task-form";
+    createTaskForm.id = "todo-create-task-form-" + projectName;
 
     const createTaskFormTitleField = document.createElement("input");
     createTaskFormTitleField.id = "todo-create-task-title";
@@ -59,7 +59,7 @@ function createTaskForm() {
 
 function createNewTask(e) {
     e.preventDefault();
-    console.log("submit");
+    console.log(this.id);
 
     const createTaskFormData = new FormData(this);
 
@@ -68,7 +68,7 @@ function createNewTask(e) {
     let newTaskDueDate = createTaskFormData.get('task-due-date');
     let newTaskPriority = createTaskFormData.get('task-priority');
 
-    let newTask = new Task(newTaskTitle, newTaskDescription, newTaskDueDate, newTaskPriority);
+    let newTask = new Task(this.id, newTaskTitle, newTaskDescription, newTaskDueDate, newTaskPriority);
 
     console.log(newTask);
 }

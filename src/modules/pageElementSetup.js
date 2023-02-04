@@ -24,7 +24,7 @@ function todoMainSetup() {
     todoMain.id = "todo-main";
 
     todoMain.appendChild(createTaskButton());
-    todoMain.appendChild(createTaskForm());
+    todoMain.appendChild(createTaskForm("main"));
 
     return todoMain;
 

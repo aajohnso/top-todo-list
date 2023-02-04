@@ -72,6 +72,8 @@ function createNewTask(e) {
     let newTask = new Task(this.dataset.project, newTaskTitle, newTaskDescription, newTaskDueDate, newTaskPriority);
 
     renderTask(newTask);
+
+    this.reset();
 }
 
 export {createTaskButton, createTaskForm};

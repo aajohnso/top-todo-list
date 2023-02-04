@@ -1,4 +1,5 @@
 import {Task} from "./taskObject";
+import {renderTask} from "./renderTask";
 
 function createTaskButton() {
     
@@ -14,6 +15,7 @@ function createTaskForm(projectName) {
 
     const createTaskForm = document.createElement("form");
     createTaskForm.id = "todo-create-task-form-" + projectName;
+    createTaskForm.dataset.project = projectName;
 
     const createTaskFormTitleField = document.createElement("input");
     createTaskFormTitleField.id = "todo-create-task-title";
@@ -59,7 +61,6 @@ function createTaskForm(projectName) {
 
 function createNewTask(e) {
     e.preventDefault();
-    console.log(this.id);
 
     const createTaskFormData = new FormData(this);
 
@@ -68,9 +69,9 @@ function createNewTask(e) {
     let newTaskDueDate = createTaskFormData.get('task-due-date');
     let newTaskPriority = createTaskFormData.get('task-priority');
 
-    let newTask = new Task(this.id, newTaskTitle, newTaskDescription, newTaskDueDate, newTaskPriority);
+    let newTask = new Task(this.dataset.project, newTaskTitle, newTaskDescription, newTaskDueDate, newTaskPriority);
 
-    console.log(newTask);
+    renderTask(newTask);
 }
 
 export {createTaskButton, createTaskForm};

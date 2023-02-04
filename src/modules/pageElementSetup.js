@@ -1,4 +1,5 @@
 import {createTaskButton, createTaskForm} from './task/createTask.js';
+import {setupProjectSpace} from './project/createProject.js';
 
 function todoHeaderSetup() {
 
@@ -20,12 +21,7 @@ function todoSidebarSetup() {
 
 function todoMainSetup() {
 
-    const todoMain = document.createElement("section");
-    todoMain.id = "todo-main";
-
-    todoMain.appendChild(createTaskButton());
-    todoMain.appendChild(createTaskForm("main"));
-
+    const todoMain = setupProjectSpace('main');
     return todoMain;
 
 }

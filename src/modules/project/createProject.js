@@ -1,7 +1,10 @@
 import {createTaskButton, createTaskForm} from '../task/createTask.js';
+import {Project} from './projectObject.js';
 
 function setupProjectSpace(projectName) {
 
+    let todoProject = new Project(projectName);
+    
     let todoMainContainer = document.createElement("section");
     todoMainContainer.id = projectName;
 
